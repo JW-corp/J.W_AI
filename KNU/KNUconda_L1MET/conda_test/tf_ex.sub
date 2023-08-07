@@ -1,0 +1,11 @@
+executable              = tf_ex.sh
+arguments               = $(ClusterId)$(ProcId)
+output                  = tf_ex.$(ClusterId).$(ProcId).out
+error                   = tf_ex.$(ClusterId).$(ProcId).err
+log                     = tf_ex.$(ClusterId).log
+transfer_input_files = conda_setup.sh, environment.yml
+when_to_transfer_output = ON_EXIT
+request_GPUs = 1
+request_CPUs = 1
+#requirements = TARGET.CUDADeviceName =?= "Tesla P100-PCIE-16GB"
+queue
