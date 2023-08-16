@@ -1,0 +1,11 @@
+executable              = N02_run.sh
+arguments               = $(ClusterId)$(ProcId)
+output                  = MyMETML.$(ClusterId).$(ProcId).out
+error                   = MyMETML.$(ClusterId).$(ProcId).err
+log                     = MyMETML.$(ClusterId).log
+transfer_input_files = setup.sh,config,deepmeteor,lextab.py,yacctab.py,train.py
+transfer_output_files = logs
+when_to_transfer_output = ON_EXIT
+request_GPUs = 1
+request_CPUs = 1
+queue
